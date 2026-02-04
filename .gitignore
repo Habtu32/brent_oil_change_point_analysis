@@ -1,0 +1,12 @@
+# .gitignore
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/raw/*.csv
+!data/raw/.gitkeep
+.ipynb_checkpoints/
+*.log
+.env
+reports/figures/*.png
+!reports/figures/.gitkeep
