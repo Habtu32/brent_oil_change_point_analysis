@@ -1,16 +1,15 @@
 Date,Event_Name,Category,Description,Expected_Impact,Data_Source
-8/2/1990,Iraq_Kuwait_Invasion,Conflict,Iraq invades Kuwait causing supply shock,Positive_Price_Spike,Reuters_Historical
-1/17/1991,Gulf_War_Begins,Conflict,Operation Desert Storm begins,Positive_Volatility,US_Government_Archive
-7/2/1997,Asian_Financial_Crisis,Economic,Thailand currency collapse spreads,Negative_Demand_Shock,IMF_Records
-9/11/2001,September_11_Attacks,Geopolitical,Terror attacks in US disrupt markets,Negative_Spike_then_Recovery,BBC_Archive
-3/20/2003,Iraq_War_Begins,Conflict,US-led invasion of Iraq,Positive_Supply_Fear,White_House_Statements
-9/15/2008,Lehman_Brothers_Collapse,Economic,Global financial crisis begins,Negative_Demand_Crash,Federal_Reserve_Records
-12/17/2010,Arab_Spring_Begins,Geopolitical,Protests spread across Middle East,Positive_Supply_Risk,Al_Jazeera_Archive
-2/24/2011,Libya_Civil_War,Conflict,Libya oil production collapses,Positive_Price_Spike,OPEC_Monthly_Report
-11/27/2014,OPEC_No_Cut_Decision,Policy,OPEC abandons price defense for market share,Negative_Structural_Break,OPEC_Press_Release
-9/28/2016,OPEC_Production_Cut_Deal,Policy,OPEC agrees to first cut in 8 years,Positive_Recovery,OPEC_Press_Release
-9/14/2019,Saudi_Aramco_Attack,Conflict,Drone attack cuts 5% of global supply,Positive_Spike,Saudi_Energy_Ministry
-3/11/2020,COVID_Pandemic_Declared,Economic,WHO declares pandemic demand crashes,Negative_Historic_Crash,WHO_Statements
-4/12/2020,OPEC_Plus_Historic_Cut,Policy,9.7mbd production cut agreement,Positive_Partial_Recovery,OPEC_Joint_Ministerial
-2/24/2022,Russia_Ukraine_Invasion,Conflict,Full-scale invasion disrupts Russian supply,Positive_Spike_to_130,Multiple_News_Sources
-6/1/2022,EU_Russian_Oil_Ban,Policy,EU bans Russian oil imports,Positive_Sustained_Premium,EU_Official_Journal
+1990-08-02,Iraq_Kuwait_Invasion,Conflict,Iraq invades Kuwait,Price_Spike,Historical_Records
+1997-07-02,Asian_Financial_Crisis,Economic,Thailand currency crisis,Demand_Shock,IMF_Data
+2001-09-11,September_11_Attacks,Geopolitical,Terror attacks in US,Volatility_Spike,BBC_Archive
+2003-03-20,Iraq_War_Begins,Conflict,US invasion of Iraq,Supply_Risk,US_Government
+2008-09-15,Lehman_Brothers_Collapse,Economic,Global financial crisis,Demand_Crash,Federal_Reserve
+2010-12-17,Arab_Spring_Begins,Geopolitical,Middle East protests,Supply_Risk,News_Archives
+2011-02-24,Libya_Civil_War,Conflict,Libya production collapse,Price_Spike,OPEC_Reports
+2014-11-27,OPEC_No_Cut_Decision,Policy,OPEC abandons price defense,Structural_Break,OPEC_Press_Release
+2016-09-28,OPEC_Production_Cut_Deal,Policy,First cut in 8 years,Price_Recovery,OPEC_Statement
+2019-09-14,Saudi_Aramco_Attack,Conflict,Drone attack on facilities,Supply_Spike,Saudi_Energy_Ministry
+2020-03-11,COVID_Pandemic_Declared,Economic,WHO pandemic declaration,Demand_Crash,WHO_Statements
+2020-04-12,OPEC_Plus_Historic_Cut,Policy,Historic 9.7mbd cut,Partial_Recovery,OPEC_Joint_Ministerial
+2022-02-24,Russia_Ukraine_Invasion,Conflict,Full-scale invasion,Price_Spike,Multiple_Sources
+2022-06-01,EU_Russian_Oil_Ban,Policy,EU bans Russian oil,Sustained_Premium,EU_Official_Journal
