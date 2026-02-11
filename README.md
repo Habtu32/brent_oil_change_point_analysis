@@ -3,79 +3,117 @@
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyMC](https://img.shields.io/badge/PyMC-5.8+-orange.svg)](https://www.pymc.io/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)[web:7][web:10]
+[![React](https://img.shields.io/badge/react-18+-61DAFB.svg)](https://reactjs.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-> **Detecting structural breaks in Brent oil prices using Bayesian change point analysis**
->
-> 10 Academy - Week 11 Challenge | February 2026[web:1][web:4]
-
----
-
-## 📊 Project Overview
-
-This project analyzes 35 years of Brent crude oil prices (1987-2022) to identify **structural breaks** (change points) caused by major geopolitical events, economic shocks, and OPEC policy decisions.[web:2][web:5] Using **Bayesian inference** and **PyMC**, we quantify the timing and magnitude of regime changes to support investment strategies, policy development, and risk management.[web:3][web:6]
-
-### Key Question
-
-> *"When did the oil market fundamentally change, and which events drove those changes?"*[web:8]
-
-### Business Impact
-
-| Stakeholder       | Application                                        |
-|-------------------|----------------------------------------------------|
-| **Investors**     | Timing entry/exit based on regime detection        |
-| **Policymakers**  | Evaluating impact of sanctions and agreements      |
-| **Energy Companies** | Hedging strategies and operational planning   |[web:2][web:5]
+> **Bayesian change point detection and interactive visualization of Brent oil price structural breaks (1987-2022)**
+> 
+> 10 Academy - Week 11 Challenge | Artificial Intelligence Mastery | February 2026
 
 ---
 
-## 🗂️ Repository Structure
+## 🎯 Project Overview
 
-```text
+This project analyzes 35 years of Brent crude oil prices to identify **structural breaks** (change points) caused by major geopolitical events, economic shocks, and OPEC policy decisions. Using **Bayesian inference** with PyMC, we quantify the timing and magnitude of regime changes to support investment strategies, policy development, and risk management.
+
+### Business Problem
+
+Birhan Energies, a leading energy sector consultancy, requires data-driven insights into how major events impact oil prices. This analysis addresses:
+
+| Stakeholder | Question | Solution |
+|:---|:---|:---|
+| **Investors** | When to buy/sell based on regime changes? | Detected change points with confidence intervals |
+| **Policymakers** | Which interventions had measurable impact? | Event-associated structural breaks |
+| **Energy Companies** | How to hedge against volatility shocks? | Quantified volatility regime changes |
+
+### Key Results
+
+| Change Point | Date | Daily Impact | Volatility Change | Associated Event |
+|:---|:---|:---|:---|:---|
+| **Gulf War** | 1990-08-02 | -10.00% | 3.4x | Iraq invades Kuwait |
+| **Financial Crisis** | 2008-09-15 | **-70.00%** | 2.4x | Lehman Brothers collapse |
+| **OPEC Price War** | 2014-11-26 | -10.00% | 2.5x | OPEC abandons price defense |
+| **COVID-19** | 2020-03-11 | **-470.00%** | **6.2x** | WHO declares pandemic |
+
+---
+
+## 🏗️ Repository Structure
+
+```
 brent-oil-change-point-analysis/
 │
-├── data/                          # All data files
-│   ├── raw/                       # Original Brent prices (1987-2022)
-│   ├── processed/                 # Cleaned data with engineered features
-│   └── external/                  # Researched geopolitical events
+├── 📁 data/                          # All data files
+│   ├── raw/                          # Original Brent prices (1987-2022)
+│   │   └── BrentOilPrices.csv
+│   ├── processed/                    # Cleaned data with features
+│   │   ├── features_engineered.csv
+│   │   └── change_point_results.csv
+│   └── external/                     # Researched events
+│       └── geopolitical_events.csv
 │
-├── notebooks/                     # Analysis notebooks
-│   ├── 01_eda.ipynb               # Exploratory data analysis ✅
-│   ├── 02_bayesian_modeling.ipynb # PyMC change point models (Phase 2)
-│   └── 03_advanced_analysis.ipynb # Multiple change points (Phase 2+)
+├── 📁 notebooks/                     # Analysis notebooks
+│   ├── 01_eda.ipynb                  # Task 1: EDA and data foundation
+│   ├── 02_bayesian_modeling.ipynb    # Task 2: Change point detection
+│   └── 03_advanced_analysis.ipynb    # Extensions and validation
 │
-├── src/                           # Production code
-│   ├── data/                      # Data loading & processing
-│   ├── models/                    # Bayesian models
-│   ├── visualization/             # Plotting utilities
-│   └── dashboard/                 # Flask backend (Phase 3)
+├── 📁 src/                           # Production code
+│   ├── data/                         # Data processing modules
+│   │   ├── load_data.py
+│   │   ├── clean_data.py
+│   │   └── features.py
+│   ├── models/                       # Bayesian models
+│   │   └── change_point.py
+│   ├── visualization/                # Plotting utilities
+│   │   └── plots.py
+│   └── dashboard/                    # Task 3: Flask backend
+│       └── app.py
 │
-├── reports/                       # Documentation & outputs
-│   ├── interim_report.md          # Task 1 deliverable ✅
-│   └── figures/                   # Generated visualizations
+├── 📁 dashboard-frontend/            # Task 3: React frontend
+│   ├── src/
+│   │   ├── App.js                    # Main dashboard component
+│   │   ├── App.css                   # Styling
+│   │   └── index.js
+│   └── package.json
 │
-├── requirements.txt               # Python dependencies
-├── README.md                      # This file
-└── .gitignore                     # Git exclusions
-```[web:1][web:4]
+├── 📁 reports/                       # Documentation
+│   ├── interim_report.md             # Task 1 submission
+│   ├── final_report.md               # Complete analysis
+│   └── figures/                      # Generated visualizations
+│       ├── 01_full_series.png
+│       ├── 02_returns_volatility.png
+│       ├── 03_mean_comparison.png
+│       └── 05_final_change_points.png
+│
+├── 📄 requirements.txt               # Python dependencies
+├── 📄 README.md                      # This file
+└── 📄 .gitignore                     # Git exclusions
+```
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Clone & Setup
+### Prerequisites
+
+- Python 3.9+
+- Node.js 16+
+- Git
+
+### 1. Clone Repository
 
 ```bash
-# Clone repository
 git clone https://github.com/yourusername/brent-oil-change-point-analysis.git
 cd brent-oil-change-point-analysis
+```
 
+### 2. Backend Setup
+
+```bash
 # Create virtual environment
 python -m venv venv
 
 # Activate (Mac/Linux)
 source venv/bin/activate
-
 # Activate (Windows)
 venv\Scripts\activate
 
@@ -83,101 +121,163 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Run EDA Notebook
+### 3. Frontend Setup
+
+```bash
+cd dashboard-frontend
+npm install
+cd ..
+```
+
+### 4. Run Analysis (Optional)
 
 ```bash
 cd notebooks
-jupyter notebook 01_eda.ipynb
+jupyter notebook 01_eda.ipynb          # Task 1: EDA
+jupyter notebook 02_bayesian_modeling.ipynb  # Task 2: Modeling
 ```
 
-Execute all cells to reproduce Task 1 results:[web:1]
+### 5. Run Dashboard
 
-- Data loading (9,011 observations)[web:5]
-- Feature engineering (27 features)[web:3]
-- Stationarity testing (ADF: -12.60, p < 0.001)[web:5]
-- Visualization of 5 distinct price regimes[web:2][web:4]
-
-### 3. Verify Task 1 Deliverables
-
+Terminal 1 - Backend:
 ```bash
-# Check files exist
-ls data/processed/features_engineered.csv
-ls data/external/geopolitical_events.csv
-ls reports/interim_report.md
+cd src/dashboard
+python app.py
+# API available at: http://localhost:5000
+```
+
+Terminal 2 - Frontend:
+```bash
+cd dashboard-frontend
+npm start
+# Dashboard opens at: http://localhost:3000
 ```
 
 ---
 
-## 📈 Key Findings (Task 1)
+## 📊 Methodology
 
-### Data Summary
+### Task 1: Data Foundation
+- **Data**: 9,011 daily Brent prices (May 20, 1987 – September 30, 2022)
+- **Cleaning**: Date parsing, missing value handling, quality validation
+- **Features**: Log returns, volatility measures (7d, 30d, 90d), moving averages
+- **Validation**: ADF test confirms stationarity (ADF = -12.60, p < 0.001)
 
-| Metric            | Value                                   |
-|-------------------|-----------------------------------------|
-| Period            | May 20, 1987 - September 30, 2022       |
-| Observations      | 9,011 daily prices                      |
-| Price Range       | 9.10 - 143.95 USD                       |
-| Mean Price        | 46.46 USD                               |[web:5]
-| Identified Regimes | See below                             |
+### Task 2: Bayesian Change Point Detection
+- **Approach**: Two-stage (detect τ, then Bayesian parameter estimation)
+- **Framework**: PyMC with NUTS sampler
+- **Model**: Normal likelihood with regime-specific means and variances
+- **Validation**: 
+  - R-hat < 1.01 (perfect convergence)
+  - ESS > 4,000 (excellent sampling efficiency)
+  - 95% credible intervals for all parameters
 
-Identified regimes:[web:2][web:4]
+### Task 3: Interactive Dashboard
+- **Backend**: Flask REST API
+- **Frontend**: React with Recharts
+- **Features**: 
+  - Interactive price chart with change point markers
+  - Date range filtering
+  - Impact metrics visualization
+  - MCMC diagnostics display
 
-- 1987-2000: Stable low (10-25 USD) – "Cheap Oil Era"
-- 2000-2008: Steady climb to 143 USD – "China Boom"
-- 2008-2009: Financial crisis crash – "Great Recession"
-- 2009-2014: High plateau (80-120 USD) – "100 USD Era"
-- 2014-2016: Structural break (115 → 30 USD) – "Shale Revolution"
-- 2016-2022: Volatile recovery – "New Normal"
+---
 
-### Statistical Validation
+## 📈 Key Findings
 
-- ✅ Stationarity confirmed: Log returns (ADF = -12.60, p < 0.001)[web:5]
-- ✅ Data quality: Zero missing values, zero duplicates[web:5]
-- ✅ Features engineered: Returns, volatility, moving averages[web:3]
+### 1. Four Distinct Regimes Identified
+
+| Era | Period | Characteristics |
+|:---|:---|:---|
+| **Stable Low** | 1987-1990 | $15-25, low volatility |
+| **Gulf War Shock** | 1990-2008 | Elevated volatility, gradual rise |
+| **Financial Crisis** | 2008-2014 | High volatility, $100 plateau |
+| **Shale/OPEC War** | 2014-2020 | Structural break to lower prices |
+| **COVID Era** | 2020-2022 | Extreme volatility, recovery |
+
+### 2. Volatility Clustering
+
+- **Normal times**: ~20-35% annualized volatility
+- **Crisis periods**: 75-146% annualized volatility (2-6x increase)
+- **Largest shock**: COVID-19 with 6.2x volatility multiplier
+
+### 3. Return Impact
+
+- **Financial Crisis 2008**: -0.70% daily returns (-176% annualized)
+- **COVID-19 2020**: -4.70% daily returns at peak (-1,184% annualized)
+- **Structural breaks** persist longer than temporary shocks
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Component           | Technology              |
-|---------------------|------------------------|
-| Language            | Python 3.9+            |
-| Bayesian Modeling   | PyMC 5.8+              |
-| Data Processing     | Pandas, NumPy          |
-| Visualization       | Matplotlib, Seaborn, ArviZ |
-| Dashboard Backend   | Flask (Phase 3)        |
-| Dashboard Frontend  | React (Phase 3)        |[web:3][web:6][web:9]
+| Component | Technology | Purpose |
+|:---|:---|:---|
+| **Language** | Python 3.9+ | Data processing, modeling |
+| **Bayesian Framework** | PyMC 5.8+ | Change point detection |
+| **Data Processing** | Pandas, NumPy | Feature engineering |
+| **Visualization** | Matplotlib, Seaborn, Recharts | EDA and dashboard |
+| **Backend** | Flask | REST API |
+| **Frontend** | React 18 | Interactive dashboard |
+| **Version Control** | Git, GitHub | Collaboration |
 
 ---
 
-## 📋 Task Status
+## 📋 Task Completion Status
 
-| Phase            | Status        | Deliverables                         |
-|------------------|--------------|--------------------------------------|
-| Task 1: Foundation | ✅ COMPLETE | EDA, events database, workflow document |
-| Task 2: Modeling | 🔄 IN PROGRESS | PyMC change point models            |
-| Task 3: Dashboard | ⏳ PENDING  | Flask/React interactive application |[web:1][web:3]
+| Task | Status | Deliverables |
+|:---|:---:|:---|
+| **Task 1: Foundation** | ✅ Complete | EDA notebook, events database, workflow document |
+| **Task 2: Modeling** | ✅ Complete | Bayesian models, 4 change points, impact quantification |
+| **Task 3: Dashboard** | ✅ Complete | Flask API, React frontend, interactive visualization |
 
 ---
 
-## 📚 Documentation
+## 🎓 Learning Outcomes
 
-- Task 1 Report: `reports/interim_report.md`[web:1]
-- Event Database: `data/external/geopolitical_events.csv`[web:2][web:8]
-- EDA Notebook: `notebooks/01_eda.ipynb`[web:4]
+- **Change Point Analysis**: Detecting structural breaks in time series
+- **Bayesian Inference**: PyMC, MCMC sampling, convergence diagnostics
+- **Statistical Modeling**: Regime-switching models, hypothesis testing
+- **Full-Stack Development**: Flask backend, React frontend, REST APIs
+- **Data Communication**: Interactive dashboards for stakeholder engagement
+
+---
+
+## 📚 References
+
+- PyMC Documentation: https://www.pymc.io/
+- Recharts: http://recharts.org/
+- 10 Academy Curriculum: Week 11 - Change Point Analysis
 
 ---
 
 ## 🤝 Contributing
 
-This is an educational project for 10 Academy's AI Mastery program.[web:1] For questions or feedback:
-
+This is an educational project for 10 Academy's AI Mastery program. For questions:
 - Slack: `#all-week11`
-- Office Hours: Mon–Fri, 08:00–15:00 UTC[web:1]
+- Office Hours: Mon-Fri, 08:00-15:00 UTC
 
 ---
 
 ## 📝 License
 
-MIT License – See `LICENSE` for details.[web:10]
+MIT License - See [LICENSE](LICENSE) for details.
+
+---
+
+## 👤 Author
+
+**Habtamu Wendifraw**  
+10 Academy - Artificial Intelligence Mastery  
+February 2026
+
+---
+
+**Repository**: (https://github.com/Habtu32/brent_oil_change_point_analysis)  
+**Live Demo**:   
+**Documentation**:
+
+---
+
+*This project demonstrates end-to-end data science workflow: from raw data to interactive deployment, with rigorous statistical methodology and professional software engineering practices.*
 ```
