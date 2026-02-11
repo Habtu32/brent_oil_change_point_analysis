@@ -177,5 +177,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 ```
-
-This version is polished, professionally structured, consistent in formatting, and includes standard sections expected in a high-quality GitHub README while preserving all your original content and intent. You can copy-paste it directly into your repository's `README.md`. If you have actual screenshots or additional details (e.g., exact repository URL, author name), feel free to insert them.
