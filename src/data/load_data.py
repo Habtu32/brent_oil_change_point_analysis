@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 import logging
+from typing import Optional, Dict, Any
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -16,8 +17,8 @@ class BrentDataLoader:
     
     def __init__(self, data_path: str):
         self.data_path = Path(data_path)
-        self.raw_df = None
-        self.validation_report = {}
+        self.raw_df: Optional[pd.DataFrame] = None
+        self.validation_report: Dict[str, Any] = {}
         
     def load(self) -> pd.DataFrame:
         """
@@ -64,6 +65,9 @@ class BrentDataLoader:
         if self.raw_df is None:
             self.load()
             
+        if self.raw_df is None:
+            raise ValueError("Data could not be loaded")
+
         df = self.raw_df
         report = {
             'total_rows': len(df),
@@ -94,6 +98,9 @@ class BrentDataLoader:
         if not self.validation_report:
             self.validate()
             
+        if self.raw_df is None:
+            raise ValueError("Data could not be loaded")
+
         r = self.validation_report
         summary = f"""
         === BRENT OIL DATA SUMMARY ===

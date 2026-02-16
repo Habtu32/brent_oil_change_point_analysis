@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import logging
+from typing import Optional
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +16,7 @@ class BrentDataCleaner:
     
     def __init__(self, df: pd.DataFrame):
         self.raw_df = df.copy()
-        self.clean_df = None
+        self.clean_df: Optional[pd.DataFrame] = None
         
     def parse_dates(self, date_format: str = '%d-%b-%y') -> 'BrentDataCleaner':
         """
@@ -103,6 +104,8 @@ class BrentDataCleaner:
     def clean(self) -> pd.DataFrame:
         """Execute cleaning pipeline and return clean data."""
         self.clean_df = self.raw_df.copy()
+        if self.clean_df is None:
+             raise ValueError("Failed to create clean dataframe")
         logger.info(f"Cleaning complete: {len(self.clean_df)} rows")
         return self.clean_df
 
