@@ -176,4 +176,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - Brent crude oil price data sourced from public EIA/API repositories
 
 ---
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> f35f9819e4f85ac5d82d4aa5926345b449469a82
