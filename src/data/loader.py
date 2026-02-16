@@ -82,6 +82,9 @@ class BrentDataLoader:
         if self.df is None:
             self.load()
             
+        if self.df is None:
+            raise ValueError("Data could not be loaded")
+
         df = self.df
         report = {
             'total_rows': len(df),
@@ -148,3 +151,4 @@ if __name__ == "__main__":
     df, loader = load_brent_data()
     print("\nFirst 5 rows:")
     print(df.head())
+
